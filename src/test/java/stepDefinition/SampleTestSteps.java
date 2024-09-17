@@ -8,16 +8,23 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
+
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.support.PageFactory;
 import pages.LoginUI;
+import utils.Excelutil;
 import utils.Report;
 import utils.SharedDriver;
 
@@ -47,15 +54,22 @@ public class SampleTestSteps extends LoginUI {
         System.out.println("Launched Successfully");
 //        test.get().log(Status.INFO, "Driver opened");
     }
+    @Then("the app should open successfully  {string} and  {int}")
+    public void the_app_should_open_successfully_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
+        Excelutil reader = new Excelutil();
+        List<Map<String,String>> testData =
+                reader.getData("\"C:\\Users\\ShaliniPerumal\\Desktop\\mobileautomation.xlsx\"", sheetName);
+
+        String heading = testData.get(rowNumber).get("abc");
 
 
-    @Then("the app should open successfully")
+    /*@Then("the app should open successfully")
     public void the_app_should_open_successfully() throws InterruptedException {
 
 //        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_edt_formula")).sendKeys("8");
 //        assert someElement.isDisplayed();
        clickEight();
-//        try {
+//        try {*/
 //            loginUI.clickEight(); // Ensure clickEight interacts with a valid element
 //            Report.test.get().log(Status.PASS, "App opened and action completed successfully");
 //        } catch (Exception e) {
