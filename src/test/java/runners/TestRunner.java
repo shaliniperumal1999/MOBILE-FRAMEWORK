@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 import java.sql.DriverManager;
 import java.util.Objects;
 
-@CucumberOptions(features = {"src/test/resources"}, glue = {"stepDefinition"}, plugin = {"pretty","html:Report/cucumbeReport.html"})
+@CucumberOptions(features = {"src/test/resources"}, glue = {"stepDefinition"}, plugin = {"pretty","html:Report/cucumberReport.html"})
 public class TestRunner extends AbstractTestNGCucumberTests{
     @AfterClass
     public static void tearDown() {

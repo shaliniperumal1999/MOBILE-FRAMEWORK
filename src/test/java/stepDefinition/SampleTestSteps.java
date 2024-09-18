@@ -8,6 +8,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -34,6 +35,7 @@ public class SampleTestSteps extends LoginUI {
 
     AndroidDriver driver;
     private LoginUI loginUI;
+
     public SampleTestSteps() throws MalformedURLException {
         super(); // This calls the constructor of LoginUI
         // Initialize the ExtentTest
@@ -41,7 +43,7 @@ public class SampleTestSteps extends LoginUI {
 //        test.set(testInstance); // Set current ExtentTest to ThreadLocal
     }
 
-//    @Before // Cucumber hook to run before each scenario
+    //    @Before // Cucumber hook to run before each scenario
 //    public void setup() {
 //        Report.setup(); // Set up the Extent Reports
 //        Report.createTest("Sample Test Steps"); // Create a test for this scenario
@@ -54,30 +56,32 @@ public class SampleTestSteps extends LoginUI {
         System.out.println("Launched Successfully");
 //        test.get().log(Status.INFO, "Driver opened");
     }
-    @Then("the app should open successfully  {string} and  {int}")
-    public void the_app_should_open_successfully_sheetname_and_rownumber(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
+
+
+    @When("enter the value {string} and {int}")
+    public void enter_the_value_and(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
         Excelutil reader = new Excelutil();
-        List<Map<String,String>> testData =
-                reader.getData("\"C:\\Users\\ShaliniPerumal\\Desktop\\mobileautomation.xlsx\"", sheetName);
+        List<Map<String, String>> testData =
+                reader.getData("input/mobileautomation.xlsx", sheetName);
 
         String heading = testData.get(rowNumber).get("abc");
 
+        System.out.println("Heading:" + heading);
+        clickEight(heading);
 
-    /*@Then("the app should open successfully")
-    public void the_app_should_open_successfully() throws InterruptedException {
 
-//        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_edt_formula")).sendKeys("8");
-//        assert someElement.isDisplayed();
-       clickEight();
-//        try {*/
-//            loginUI.clickEight(); // Ensure clickEight interacts with a valid element
-//            Report.test.get().log(Status.PASS, "App opened and action completed successfully");
-//        } catch (Exception e) {
-//            Report.test.get().fail("Failed to click element: " + e.getMessage());
-//        }
-//        Report.test.get().log(Status.PASS, "App opened and action completed successfully");
+
     }
-}
+        @Then("the app should open successfully")
+        public void the_app_should_open_successfully() {
+            System.out.println("check:");
+
+        }
+
+        }
+
+
+
 
 
 
