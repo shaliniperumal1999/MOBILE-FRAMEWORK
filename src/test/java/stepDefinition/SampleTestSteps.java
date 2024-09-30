@@ -57,7 +57,6 @@ public class SampleTestSteps extends LoginUI {
 //        test.get().log(Status.INFO, "Driver opened");
     }
 
-
     @When("enter the value {string} and {int}")
     public void enter_the_value_and(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
         Excelutil reader = new Excelutil();
@@ -69,8 +68,6 @@ public class SampleTestSteps extends LoginUI {
         System.out.println("Heading:" + heading);
         clickEight(heading);
 
-
-
     }
         @Then("the app should open successfully")
         public void the_app_should_open_successfully() {
@@ -79,6 +76,7 @@ public class SampleTestSteps extends LoginUI {
         }
 
         }
+
 
 
 
