@@ -16,7 +16,8 @@ public class LoginUI extends Report
 {
      AndroidDriver driver;
 
-    @FindBy(how = How.ID, using = "com.sec.android.app.popupcalculator:id/calc_keypad_btn_08")
+//    @FindBy(how = How.ID, using = "com.sec.android.app.popupcalculator:id/calc_keypad_btn_08")
+    @FindBy(how = How.ID, using = "com.sec.android.app.popupcalculator:id/calc_edt_formula")
     public WebElement eight;
 
     public LoginUI() throws MalformedURLException
@@ -28,7 +29,8 @@ public class LoginUI extends Report
     }
     public LoginUI clickEight()
     {
-        eight.click();
+//        eight.click();
+        eight.sendKeys("8");
 //    if (eight != null) {
 //            eight.click();
 //            Report.test.get().info("Eight clicked successfully");

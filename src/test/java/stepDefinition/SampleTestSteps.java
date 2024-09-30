@@ -17,11 +17,14 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
 import pages.LoginUI;
+import utils.DataProviderUtil;
 import utils.Report;
 import utils.SharedDriver;
 
 public class SampleTestSteps extends LoginUI {
+
     private ActionClass actionClass;
     private ExtentTest test;
 
