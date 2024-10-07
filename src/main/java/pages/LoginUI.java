@@ -1,7 +1,7 @@
 package pages;
 
-import com.aventstack.extentreports.ExtentTest;
 import io.appium.java_client.android.AndroidDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
@@ -9,28 +9,32 @@ import utils.Report;
 import utils.SharedDriver;
 import org.openqa.selenium.support.PageFactory;
 import java.net.MalformedURLException;
-
-import static utils.Report.test;
+import java.util.Map;
 
 public class LoginUI extends Report
 {
-     AndroidDriver driver;
+    AndroidDriver driver;
 
-//    @FindBy(how = How.ID, using = "com.sec.android.app.popupcalculator:id/calc_keypad_btn_08")
-    @FindBy(how = How.ID, using = "com.sec.android.app.popupcalculator:id/calc_edt_formula")
+    @FindBy(how = How.ID, using = "com.sec.android.app.popupcalculator:id/calc_keypad_btn_08")
     public WebElement eight;
 
-    public LoginUI() throws MalformedURLException
+    public LoginUI()
+
     {
-        this.driver = SharedDriver.getCapabilities(); // Initialize the driver
+
+        try {
+            this.driver = SharedDriver.getCapabilities(); // Initialize the driver
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
         PageFactory.initElements(driver, this);
-//        Report.test.get().info("App launched successfully"); // Initialize elements
-//        test.get().info("App launched successfully");
+
     }
-    public LoginUI clickEight()
+    public LoginUI clickEight(String heading)
     {
-//        eight.click();
-        eight.sendKeys("8");
+        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_edt_formula")).sendKeys(heading);
+
+        // eight.click();
 //    if (eight != null) {
 //            eight.click();
 //            Report.test.get().info("Eight clicked successfully");
@@ -40,3 +44,4 @@ public class LoginUI extends Report
         return this;
     }
 }
+
