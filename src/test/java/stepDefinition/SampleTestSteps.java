@@ -63,8 +63,8 @@ public class SampleTestSteps extends LoginUI {
     @When("enter the value {string} and {int}")
     public void enter_the_value_and(String sheetName, Integer rowNumber) throws InvalidFormatException, IOException, org.apache.poi.openxml4j.exceptions.InvalidFormatException {
         Excelutil reader = new Excelutil();
-        List<Map<String, String>> testData =
-                reader.getData("input/mobileautomation.xlsx", sheetName);
+//        List<Map<String, String>> testData =
+//                reader.getData("input/mobileautomation.xlsx", sheetName);
 //
 //        String heading = testData.get(rowNumber).get("abc");
 //
@@ -80,10 +80,10 @@ public class SampleTestSteps extends LoginUI {
         }
 
     }
-        @Then("the app should open successfully")
+
+    @Then("the app should open successfully")
         public void the_app_should_open_successfully() {
             System.out.println("check:");
-
         }
 
         }

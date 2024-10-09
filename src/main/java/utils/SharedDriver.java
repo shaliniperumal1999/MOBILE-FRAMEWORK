@@ -38,8 +38,8 @@ public class SharedDriver extends EventFiringDecorator<WebDriver> {
             capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
             capabilities.setCapability(MobileCapabilityType.UDID, "RZ8N91WR1CD");
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
-            capabilities.setCapability("appPackage", "com.sec.android.app.popupcalculator");
-            capabilities.setCapability("appActivity", "com.sec.android.app.popupcalculator.Calculator");
+            capabilities.setCapability("appPackage", "com.venzo.talntx");
+            capabilities.setCapability("appActivity", "com.venzo.talntx.MainActivity");
 
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), capabilities);
         }
