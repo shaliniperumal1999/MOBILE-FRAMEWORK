@@ -35,7 +35,13 @@ public class LoginUI extends Report {
 
     @FindBy(how = How.XPATH, using = "//android.widget.CheckBox[@resource-id=\"recaptcha-anchor\"]")
     public WebElement CaptchaBox;
+    @FindBy(how = How.ID, using = "com.android.permissioncontroller:id/permission_allow_button")
+    public WebElement clickallownotification;
+    @FindBy(how = How.XPATH, using = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText[1]")
+    public WebElement enterotp;
 
+    @FindBy(how = How.XPATH, using = "//android.widget.TextView[@text=\"Verify\"]")
+    public WebElement clickverify;
     public LoginUI() {
 
         try {
@@ -60,7 +66,7 @@ public class LoginUI extends Report {
         return this;
     }
 
-    public LoginUI CheckLogo()  {
+    public LoginUI CheckLogo() {
         try {
             Thread.sleep(8000);
         } catch (InterruptedException e) {
@@ -71,29 +77,52 @@ public class LoginUI extends Report {
         return this;
     }
 
-    public LoginUI EnterMobileNumber(String num){
+    public LoginUI EnterMobileNumber(String num) {
         NumberField.sendKeys(num);
         return this;
     }
 
-    public LoginUI ClickTermsCheckBox(){
+    public LoginUI ClickTermsCheckBox() {
         TermsCheckBox.click();
         return this;
     }
 
-    public LoginUI ClicksendCode(){
+    public LoginUI ClicksendCode() {
         sendCode.click();
         return this;
     }
 
-    public LoginUI ClickCaptchaBox(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOf(CaptchaBox));
-
-        CaptchaBox.click();
+    public LoginUI ClickAllownotification() {
+        clickallownotification.click();
         return this;
     }
 
+    public LoginUI EnterOTP() throws InterruptedException {
+        Thread.sleep(5000);
+        enterotp.click();
+        for (int i = 1; i <= 6; i++) {
+            driver.findElement(By.xpath("//android.widget.FrameLayout[@resource-id='android:id/content']/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText[" + i + "]")).sendKeys("7");
 
+        }
+        return this;
+    }
+    public LoginUI ClickVerifyButton() {
+        clickverify.click();
+        return this;
+    }
 }
+//android.widget.TextView[@text="Verify"]
 
+
+
+/*
+
+        public LoginUI ClickCaptchaBox()
+    {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOf(CaptchaBox));
+
+            CaptchaBox.click();
+            return this;
+        }
+*/

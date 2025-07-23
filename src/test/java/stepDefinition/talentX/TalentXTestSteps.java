@@ -27,9 +27,14 @@ public class TalentXTestSteps extends LoginUI {
     }
 
     @Given("the TALENTx app is launched")
-    public void the_TALENTx_app_is_launched() {
-        CheckLogo();
+    public void the_TALENTx_app_is_launched() throws InterruptedException {
+        Thread.sleep(5000);
+      //  CheckLogo();
 
+    }
+    @Then("click allow button")
+    public void click_allow_button(){
+        ClickAllownotification();
     }
 
     @When("enter the value {string}")
@@ -46,7 +51,7 @@ public class TalentXTestSteps extends LoginUI {
 
     @When("click Terms and Agreement")
     public void click_Terms_and_Agreement() {
-//            System.out.println("check:");
+          System.out.println("check:");
         ClickTermsCheckBox();
     }
 
@@ -55,17 +60,28 @@ public class TalentXTestSteps extends LoginUI {
         ClicksendCode();
 
     }
+    @Then("enter otp")
+    public void enter_otp() throws InterruptedException {
+        EnterOTP();
 
-    @When("click Captcha Box")
+    }
+    @Then("click verify")
+    public void click_verify(){
+        ClickVerifyButton();
+
+    }
+
+
+   /* @When("click Captcha Box")
     public void Click_Captcha_Box() {
 
-        ClickCaptchaBox();
+        ClickCaptchaBox();*/
 
     }
 
 
 
-}
+
 
 
 

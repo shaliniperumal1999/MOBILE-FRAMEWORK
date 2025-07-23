@@ -1,35 +1,18 @@
 package stepDefinition;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import container.ActionClass;
-import io.appium.java_client.remote.MobilePlatform;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.options.UiAutomator2Options;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.compress.archivers.dump.InvalidFormatException;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
-import java.util.Map;
 
-import io.appium.java_client.remote.MobileCapabilityType;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
 import pages.LoginUI;
-import utils.DataProviderUtil;
 import utils.Excelutil;
-import utils.Report;
-import utils.SharedDriver;
 
 public class SampleTestSteps extends LoginUI {
 

@@ -1,17 +1,8 @@
 package runners;
-
-import io.appium.java_client.android.AndroidDriver;
-import io.cucumber.java.en.Given;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import utils.Report;
-import utils.SharedDriver;
-
-import java.net.MalformedURLException;
-import java.sql.DriverManager;
-import java.util.Objects;
 
 @CucumberOptions(features = {"src/test/resources/talentXFeature"}, glue = {"stepDefinition/talentX"},
         plugin = {"pretty",
@@ -27,6 +18,13 @@ public class TestRunner extends AbstractTestNGCucumberTests{
         // Flush the Extent Reports after tests are done
         Report.flushReports();
     }
+
+   /* public class TestRunners {
+        @AfterClass
+        public static void writeExtentReport() {
+            Reporter.loadXMLConfig("configs/extent-config.xml");
+        }
+    }*/
 
 
 //    @AfterClass
