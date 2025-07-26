@@ -19,19 +19,5 @@ public class TestRunner extends AbstractTestNGCucumberTests{
         Report.flushReports();
     }
 
-   /* public class TestRunners {
-        @AfterClass
-        public static void writeExtentReport() {
-            Reporter.loadXMLConfig("configs/extent-config.xml");
-        }
-    }*/
 
-
-//    @AfterClass
-//    public static void tearDown() {
-//        if (Objects.nonNull(DriverManager.getDriver())) {
-//            Drivers.quitDriver();
-//        }
-//        stopAppiumServer();
-//    }
 }

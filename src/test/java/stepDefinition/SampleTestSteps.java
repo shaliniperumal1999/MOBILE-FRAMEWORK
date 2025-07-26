@@ -1,6 +1,6 @@
 package stepDefinition;
 import com.aventstack.extentreports.ExtentTest;
-import container.ActionClass;
+//import container.ActionClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,7 +16,7 @@ import utils.Excelutil;
 
 public class SampleTestSteps extends LoginUI {
 
-    private ActionClass actionClass;
+   // private ActionClass actionClass;
     private ExtentTest test;
 
     AndroidDriver driver;
@@ -59,11 +59,10 @@ public class SampleTestSteps extends LoginUI {
         for (String value : columnData) {
             System.out.println("Value New Method: " + value);
             // Example action for each value
-             clickEight(value);
+            /* clickEight(value);*/
         }
 
     }
-
     @Then("the app should open successfully")
         public void the_app_should_open_successfully() {
             System.out.println("check:");

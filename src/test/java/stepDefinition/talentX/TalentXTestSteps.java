@@ -1,7 +1,7 @@
 package stepDefinition.talentX;
 
 import com.aventstack.extentreports.ExtentTest;
-import container.ActionClass;
+//import container.ActionClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import io.cucumber.java.en.Given;
@@ -16,11 +16,6 @@ import java.util.List;
 
 public class TalentXTestSteps extends LoginUI {
 
-    private ActionClass actionClass;
-    private ExtentTest test;
-
-    AndroidDriver driver;
-    private LoginUI loginUI;
 
     public TalentXTestSteps() throws MalformedURLException {
         super();

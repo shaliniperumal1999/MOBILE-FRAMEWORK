@@ -53,20 +53,8 @@ public class LoginUI extends Report {
 
     }
 
-    public LoginUI clickEight(String heading) {
-        driver.findElement(By.id("com.sec.android.app.popupcalculator:id/calc_edt_formula")).sendKeys(heading);
 
-        // eight.click();
-//    if (eight != null) {
-//            eight.click();
-//            Report.test.get().info("Eight clicked successfully");
-//        } else {
-//            Report.test.get().fail("Element 'eight' was not initialized correctly.");
-//        }
-        return this;
-    }
-
-    public LoginUI CheckLogo() {
+/*    public LoginUI CheckLogo() {
         try {
             Thread.sleep(8000);
         } catch (InterruptedException e) {
@@ -75,7 +63,7 @@ public class LoginUI extends Report {
         logo.isDisplayed();
         System.out.println("***Logo Appeared***");
         return this;
-    }
+    }*/
 
     public LoginUI EnterMobileNumber(String num) {
         NumberField.sendKeys(num);
@@ -111,7 +99,6 @@ public class LoginUI extends Report {
         return this;
     }
 }
-//android.widget.TextView[@text="Verify"]
 
 
 
