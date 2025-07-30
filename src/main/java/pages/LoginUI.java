@@ -42,7 +42,11 @@ public class LoginUI extends Report {
 
     @FindBy(how = How.XPATH, using = "//android.widget.TextView[@text=\"Verify\"]")
     public WebElement clickverify;
+    @FindBy(how = How.ID, using = "myAccountButton")
+    public WebElement clickmyaccount;
+
     public LoginUI() {
+        super();
 
         try {
             this.driver = SharedDriver.getCapabilities(); // Initialize the driver

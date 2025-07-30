@@ -17,7 +17,7 @@ public class ProfileSteps extends profile {
     }
 
     @Then("Click myaccount")
-    public void click_myaccount() throws InterruptedException {
+    public void click_my_account() throws InterruptedException {
         ClickMyAccount();
 
     }
