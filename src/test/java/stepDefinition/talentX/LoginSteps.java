@@ -1,8 +1,6 @@
 package stepDefinition.talentX;
 
-import com.aventstack.extentreports.ExtentTest;
 //import container.ActionClass;
-import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,10 +12,10 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.List;
 
-public class TalentXTestSteps extends LoginUI {
+public class LoginSteps extends LoginUI {
 
 
-    public TalentXTestSteps() throws MalformedURLException {
+    public LoginSteps() throws MalformedURLException {
         super();
     }
 
@@ -29,6 +27,7 @@ public class TalentXTestSteps extends LoginUI {
     }
     @Then("click allow button")
     public void click_allow_button(){
+
         ClickAllownotification();
     }
 
@@ -61,8 +60,9 @@ public class TalentXTestSteps extends LoginUI {
 
     }
     @Then("click verify")
-    public void click_verify(){
+    public void click_verify() {
         ClickVerifyButton();
+
 
     }
 

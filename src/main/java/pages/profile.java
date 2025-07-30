@@ -16,6 +16,20 @@ import java.util.Map;
 
 public class profile extends Report {
 
-        @FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"My Account, View more\"]")
+        @FindBy(how = How.XPATH, using ="(//android.widget.TextView[@text=\"View more\"])[1]")
         public WebElement clickmyaccount;
+        @FindBy(how = How.XPATH, using = "//android.view.ViewGroup[@content-desc=\"Personal\"]")
+        public WebElement clickpersonal;
+
+
+        public profile ClickMyAccount() throws InterruptedException {
+                clickmyaccount.click();
+                Thread.sleep(6000);
+                return this;
+        }
+        public profile ClickPersonaldetails()  {
+                clickpersonal.click();
+                return this;
+        }
+
 }
