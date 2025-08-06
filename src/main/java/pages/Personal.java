@@ -1,14 +1,19 @@
 package pages;
 
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.commons.math3.analysis.function.Add;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Report;
 import utils.SharedDriver;
 
 import java.net.MalformedURLException;
+import java.time.Duration;
 
 public class Personal extends Report {
     AndroidDriver driver;
@@ -30,6 +35,9 @@ public class Personal extends Report {
     public WebElement Pincode;
     @FindBy(how = How.XPATH,using = "//android.view.ViewGroup[@content-desc=\"Update\"]")
     public WebElement Update;
+    @FindBy(how = How.XPATH,using = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ImageView")
+    public WebElement Uploadimage;
+
 
 
 
@@ -48,48 +56,101 @@ public class Personal extends Report {
 
     }
     public Personal ClickNationality() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(nationality));
         nationality.click();
         return this;
     }
     public Personal ClickIndian() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Indian));
         Indian.click();
         return this;
     }
+    public Personal ClickBloodGroup() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(BloodGroup));
+        BloodGroup.click();
+        return this;
+    }
     public Personal EnterBloodGroup(String Bloodgroup) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(BloodGroup));
         BloodGroup.sendKeys(Bloodgroup);
         return this;
     }
-    public Personal EnterFathername(String Fathername) {
-        BloodGroup.sendKeys(Fathername);
+    public Personal ClickFathername() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Fathername));
+        Fathername.click();
+        return this;
+    }
+    public Personal EnterFathername(String fathername) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Fathername));
+        Fathername.sendKeys(fathername);
         return this;
     }
     public Personal ClickEmail() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Email));
         Email.click();
         return this;
     }
+    public Personal ClickAddressLine() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Address));
+        Address.click();
+        return this;
+    }
     public Personal EnterAddressLine1(String AddressLine1) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Address));
         Address.sendKeys(AddressLine1);
         return this;
     }
     public Personal ClickCity() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(City));
         City.click();
         return this;
     }
     public Personal EnterCity(String cityName) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(City));
         City.sendKeys(cityName);
+        return this;
+    }
+    public Personal ClickPincode() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Pincode));
+        Pincode.click();
         return this;
     }
 
     public Personal EnterPincode(String pincode) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Pincode));
        Pincode.sendKeys(pincode);
         return this;
     }
     public Personal ClickUpdateButton() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Update));
         Update.click();
         return this;
     }
+        public Personal ClickUploadImage() throws InterruptedException {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            wait.until(ExpectedConditions.elementToBeClickable(Uploadimage));
+            Uploadimage.click();
+            return this;
+        }
+
     public Personal UploadImage(String imagePath) {
-        Update.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(Uploadimage));
+        Uploadimage.click();
         return this;
     }
 
